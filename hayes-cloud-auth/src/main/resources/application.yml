@@ -1,0 +1,27 @@
+server:
+  port: 5001
+  servlet:
+    session:
+      # 单位 s
+      timeout: 60
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: utf-8
+  resources:
+    static-locations: classpath:/static/
+  application:
+    name: hayes-cloud-auth
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.10.11.161:8848
+logging:
+  level:
+    root:
+      debug
+

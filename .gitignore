@@ -1,0 +1,4 @@
+# Project exclude paths
+/hayes-cloud-auth/target/
+/hayes-cloud-gateway/target/
+/hayes-cloud-system/target/
