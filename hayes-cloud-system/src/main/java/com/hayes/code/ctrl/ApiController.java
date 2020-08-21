@@ -1,6 +1,5 @@
 package com.hayes.code.ctrl;
 
-import com.alibaba.fastjson.JSONObject;
 import com.hayes.code.FeignService;
 import com.hayes.code.result.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class ApiController {
     @RequestMapping("/me")
     public JsonResult me() {
 
-        JSONObject me = feignService.me();
+        String me = feignService.me();
 
 
         return JsonResult.success(me);
