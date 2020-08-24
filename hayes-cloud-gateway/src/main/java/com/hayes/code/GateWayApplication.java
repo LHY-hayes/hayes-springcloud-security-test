@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,12 +21,13 @@ public class GateWayApplication {
     }
 
     @RequestMapping("/about/me")
-    public JSONObject me (){
+    public JSONObject me (Authentication authentication){
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name","tom");
         jsonObject.put("age","25");
         jsonObject.put("addr","beijing");
+        jsonObject.put("authentication",authentication);
 
         return jsonObject ;
     }
